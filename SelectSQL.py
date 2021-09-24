@@ -45,7 +45,7 @@ if dictselect== '否':
     cursor.execute(dictsql)
     dictdata = cursor.fetchall()
     cursor.close()
-    print(f'▶▶▶總共有{len(dictdata)}間◀◀◀')
+    print(f'☺總共有{len(dictdata)}間☺')
     for dr in dictdata:
         dr_no = dr[0]
         dr_noname = dr[1]
@@ -64,15 +64,9 @@ else:
     if len(data)==0:
         print(f'該區域沒有{storename}商店')
     else:
-        print(f'▶▶▶總共有{len(data)}間◀◀◀')
+        print(f'☺總共有{len(data)}間☺')
         for r in data:
             r_no=r[0]
             r_noname=r[1]
             r_address=r[2]
             print(f'▶店號:{r_no}\n▶店名:{r_noname}\n▶地址:{r_address}\n================\n',end='')
-
-
-
-
-
-
