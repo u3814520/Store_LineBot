@@ -23,10 +23,10 @@ for city in citylist:
         for t in range(len(townjson)):
             NoName=townjson[t]['NAME'].split('家')[1]  #店名
             No=townjson[t]['pkey']    #店號
-            Address=townjson[t]['addr']  #地址
+            Address=townjson[t]['addr'].replace('臺','台')  #地址
             FamilyMart.loc[iocno] = ['FamilyMart',city,Dist, No, NoName, Address]
             iocno += 1
-            print(Dist)
+            print(Address)
     print(f'===={city}====')
     time.sleep(8)
 FamilyMart.to_csv("./FamilyMart.csv",encoding='utf-8-sig',index=False)
