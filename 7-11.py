@@ -23,7 +23,7 @@ for k,v in cityid.items():
         new_soup = BeautifulSoup(new_res.text, 'html.parser')
         poiids = new_soup.select('poiid')
         for z in range(len(poiids)):
-            poiid=poiids[z].text  #店號
+            poiid=poiids[z].text.strip(' ')  #店號
             poiname = new_soup.select('poiname')[z].text   #店名
             address = new_soup.select('address')[z].text   #地址
             SevenEleven.loc[iocno] = ['SevenEleven',v,str(city),poiid,poiname,address]

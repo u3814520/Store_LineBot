@@ -15,7 +15,7 @@ conn = pymysql.connect(user="ting",
                         local_infile=1)
 cur = conn.cursor()
 with cur as cursor:
-    sql="""
+    sevensql="""
         CREATE TABLE `seveneleven` (
   `StoreName` varchar(200) DEFAULT NULL,
   `City` varchar(200) DEFAULT NULL,
@@ -26,6 +26,18 @@ with cur as cursor:
    PRIMARY KEY (`No`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
     """
-    cursor.execute(sql)
+    cursor.execute(sevensql)
+    Familysql = """
+            CREATE TABLE `FamilyMart` (
+      `StoreName` varchar(200) DEFAULT NULL,
+      `City` varchar(200) DEFAULT NULL,
+      `Dist` varchar(200) DEFAULT NULL,
+      `No` int NOT NULL,
+      `Noname` varchar(200) DEFAULT NULL,
+      `address` varchar(200) DEFAULT NULL,
+       PRIMARY KEY (`No`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+        """
+    cursor.execute(Familysql)
     conn.connect()
 conn.close()
