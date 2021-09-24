@@ -51,7 +51,7 @@ if dictselect== '否':
         dr_noname = dr[1]
         dr_address = dr[2]
         print(f'▶店號:{dr_no}\n▶店名:{dr_noname}\n▶地址:{dr_address}\n================\n', end='')
-else:
+elif dictselect== '是':
     road=str(input('請輸入輸入街道名稱:'))
     sql = f"""
         SELECT no,noname,address
@@ -70,3 +70,5 @@ else:
             r_noname=r[1]
             r_address=r[2]
             print(f'▶店號:{r_no}\n▶店名:{r_noname}\n▶地址:{r_address}\n================\n',end='')
+else:
+    print('請重新輸入')
