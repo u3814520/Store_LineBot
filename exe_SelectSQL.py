@@ -22,6 +22,7 @@ try:
     citylist.index(cityname)
 except ValueError:
     print('請重新輸入正確縣市')
+    input()
     exit()
 
 townname=str(input('請輸入輸入查詢區域:'))
@@ -34,6 +35,7 @@ cursor.execute(tsql)
 tdata=cursor.fetchall()
 if len(tdata)==0:
     print(f'該區域沒有{storename}商店')
+    input()
     exit()
 dictselect=str(input('是否街道查詢?請輸入是或否:'))
 if dictselect== '否':
@@ -51,6 +53,7 @@ if dictselect== '否':
         dr_noname = dr[1]
         dr_address = dr[2]
         print(f'▶店號:{dr_no}\n▶店名:{dr_noname}\n▶地址:{dr_address}\n================\n', end='')
+    input()
 elif dictselect== '是':
     road=str(input('請輸入輸入街道名稱:'))
     sql = f"""
@@ -63,6 +66,7 @@ elif dictselect== '是':
     cursor.close()
     if len(data)==0:
         print(f'該區域沒有{storename}商店')
+        input()
     else:
         print(f'☺總共有{len(data)}間☺')
         for r in data:
@@ -70,5 +74,7 @@ elif dictselect== '是':
             r_noname=r[1]
             r_address=r[2]
             print(f'▶店號:{r_no}\n▶店名:{r_noname}\n▶地址:{r_address}\n================\n',end='')
+    input()
 else:
     print('請重新輸入')
+input()
