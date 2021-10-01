@@ -17,14 +17,14 @@ else:
     print('請輸入7-11或全家')
     exit()
 citylist=['台北市','基隆市','新北市','桃園市','新竹市','台中市','嘉義市','台南市','高雄市','新竹縣','苗栗縣', '彰化縣', '南投縣', '宜蘭縣', '花蓮縣', '雲林縣', '嘉義縣', '台東縣','屏東縣','澎湖縣','金門縣','連江縣']
-cityname=str(input('請輸入輸入查詢縣市:'))
+cityname=str(input('請輸入查詢縣市:'))
 try:
     citylist.index(cityname)
 except ValueError:
     print('請重新輸入正確縣市')
     exit()
 
-townname=str(input('請輸入輸入查詢區域:'))
+townname=str(input('請輸入查詢區域:'))
 tsql = f"""
     SELECT no,noname,address
     from {a}
@@ -52,7 +52,7 @@ if dictselect== '否':
         dr_address = dr[2]
         print(f'▶店號:{dr_no}\n▶店名:{dr_noname}\n▶地址:{dr_address}\n================\n', end='')
 elif dictselect== '是':
-    road=str(input('請輸入輸入街道名稱:'))
+    road=str(input('請輸入街道名稱:'))
     sql = f"""
         SELECT no,noname,address
         from {a}
