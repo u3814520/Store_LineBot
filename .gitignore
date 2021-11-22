@@ -1,0 +1,7 @@
+build
+DB Browser for SQLite
+dist
+*.spec
+*.exe
+*.db
+*.png
